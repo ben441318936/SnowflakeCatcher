@@ -86,9 +86,9 @@ class SnowFlake
   void reset()
   {
     //your code here
-    if(myY >= 500)
+    if(myY == 500)
     {
-      println(swag)
+      println("swag");
       myY = 0;
       myX = (int)(Math.random()*501);
     }

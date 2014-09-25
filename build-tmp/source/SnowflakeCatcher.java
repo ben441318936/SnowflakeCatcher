@@ -38,7 +38,6 @@ public void draw()
     storm[i].lookDown();
     storm[i].move();
     storm[i].show();
-    println(i +" " + storm[i].isMoving);
   }
 }
 public void mouseDragged()
@@ -103,8 +102,9 @@ class SnowFlake
   public void reset()
   {
     //your code here
-    if(myY >= 500)
+    if(myY == 500)
     {
+      println("swag");
       myY = 0;
       myX = (int)(Math.random()*501);
     }

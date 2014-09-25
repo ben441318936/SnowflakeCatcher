@@ -18,7 +18,7 @@ void draw()
   for (int i=0; i < SnowFlakeArrayLength; i++)
   {
     storm[i].erase();
-    storm[i].reset();
+    storm[i].wrap();
     storm[i].lookDown();
     storm[i].move();
     storm[i].show();
@@ -57,13 +57,9 @@ class SnowFlake
   void lookDown()
   {
     //your code here
-    if(get(myX,myY+11) != color(0))
+    if (get(myX, myY+11) != color(0, 0,0))
     {
-      isMoving = false;
-    }
-    else 
-    {
-      isMoving = true;
+      
     }
   }
   void erase()
@@ -83,16 +79,13 @@ class SnowFlake
     }
     
   }
-  void reset()
+  void wrap()
   {
     //your code here
     if(myY == 500)
     {
-      println("swag");
       myY = 0;
       myX = (int)(Math.random()*501);
     }
   }
 }
-
-

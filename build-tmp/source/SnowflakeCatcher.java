@@ -24,7 +24,6 @@ public void setup()
   frameRate(60);
   size(500,500);
   background(0,0,0);
-  loadPixels();
   storm = new SnowFlake [SnowFlakeArrayLength];
   for (int i=0; i < SnowFlakeArrayLength; i++)
   {
@@ -36,6 +35,7 @@ public void draw()
   for (int i=0; i < SnowFlakeArrayLength; i++)
   {
     //storm[i].isMoving=true;
+    loadPixels();
     storm[i].erase();
     storm[i].lookDown();
     storm[i].wrap();

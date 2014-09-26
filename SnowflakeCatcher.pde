@@ -1,5 +1,5 @@
 SnowFlake storm [];
-int SnowFlakeArrayLength = 100;
+int SnowFlakeArrayLength = 500;
 boolean loop = true;
 int numberOfSnowflakesNotMoving = 0;
 void setup()

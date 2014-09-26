@@ -15,7 +15,7 @@ import java.io.IOException;
 public class SnowflakeCatcher extends PApplet {
 
 SnowFlake storm [];
-int SnowFlakeArrayLength = 100;
+int SnowFlakeArrayLength = 500;
 boolean loop = true;
 int numberOfSnowflakesNotMoving = 0;
 public void setup()

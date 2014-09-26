@@ -16,10 +16,9 @@ void setup()
 }
 void draw()
 {
-  loadPixels();
+  //loadPixels();
   for (int i=0; i < SnowFlakeArrayLength; i++)
   {
-    //storm[i].isMoving=true;
     storm[i].erase();
     storm[i].lookDown();
     storm[i].wrap();
@@ -40,6 +39,20 @@ void mouseDragged()
   {
     fill(0);
     ellipse(mouseX, mouseY, 100, 100);
+  }
+}
+
+void keyPressed()
+{
+  if (key == ' ')
+  {
+    background(0);
+    for (int i=0; i < SnowFlakeArrayLength; i++)
+    {
+      storm[i].myX = (int)(Math.random()*(width-19)+10);
+      storm[i].myY = (int)(Math.random()*(width-19)+10);
+      storm[i].isMoving = true;
+    }
   }
 }
 
@@ -64,7 +77,7 @@ class SnowFlake
   {
     if(myY+7 < height)
     {
-      if(pixels[((myY+7)*width)+myX] != color(0,0,0))
+      /*if(pixels[((myY+7)*width)+myX] != color(0,0,0))
       {
         isMoving=false;
       }
@@ -79,6 +92,22 @@ class SnowFlake
       else 
       {
         isMoving = true;  
+      }*/
+      if (get(myX,myY+7) != color(0,0,0))
+      {
+        isMoving = false;
+      }
+      else if (get(myX+5,myY+5) != color (0,0,0))
+      {
+        isMoving = false;
+      }
+      else if (get(myX-5,myY+5) != color(0,0,0))
+      {
+        isMoving = false;
+      }
+      else 
+      {
+        isMoving = true;
       }
     }
   } 

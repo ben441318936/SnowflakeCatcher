@@ -8,6 +8,7 @@ void setup()
   frameRate(60);
   size(500,500);
   background(0,0,0);
+  loadPixels();
   storm = new SnowFlake [SnowFlakeArrayLength];
   for (int i=0; i < SnowFlakeArrayLength; i++)
   {
@@ -63,7 +64,6 @@ class SnowFlake
   {
     if(myY+7 < height)
     {
-      loadPixels();
       if(pixels[((myY+7)*width)+myX] != color(0,0,0))
       {
         isMoving=false;

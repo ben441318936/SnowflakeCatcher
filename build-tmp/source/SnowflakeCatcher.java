@@ -65,8 +65,8 @@ class SnowFlake
   boolean isMoving;
   SnowFlake()
   {
-    myX = (int)(Math.random()*(width-9)+5);
-    myY = (int)(Math.random()*(height-9)+5);
+    myX = (int)(Math.random()*(width-19)+10);
+    myY = (int)(Math.random()*(height-19)+10);
     isMoving = true;
   }
   public void show()
@@ -116,7 +116,7 @@ class SnowFlake
     if(myY >= height)
     {
       myY = 0;
-      myX = (int)(Math.random()*(width-9)+5);
+      myX = (int)(Math.random()*(width-19)+10);
     }
   }
 }

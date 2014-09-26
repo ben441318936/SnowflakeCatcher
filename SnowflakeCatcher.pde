@@ -16,10 +16,10 @@ void setup()
 }
 void draw()
 {
+  loadPixels();
   for (int i=0; i < SnowFlakeArrayLength; i++)
   {
     //storm[i].isMoving=true;
-    loadPixels();
     storm[i].erase();
     storm[i].lookDown();
     storm[i].wrap();

@@ -70,6 +70,7 @@ public void keyPressed()
   {
     background(0);
     mode = (int)(Math.random()*2+1);
+    println("mode: "+mode);
     for (int i=0; i < SnowFlakeArrayLength; i++)
     {
       storm[i].myX = (int)(Math.random()*(width-19)+10);

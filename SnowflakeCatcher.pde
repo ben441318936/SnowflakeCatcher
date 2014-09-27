@@ -2,6 +2,7 @@ SnowFlake storm [];
 int SnowFlakeArrayLength = 500;
 boolean loop = true;
 int numberOfSnowflakesNotMoving = 0;
+int mode = (int)(Math.random()*2+1);
 void setup()
 {
   imageMode(RGB);
@@ -13,10 +14,15 @@ void setup()
   {
     storm[i] = new SnowFlake();
   }
+  println("mode: "+mode);
 }
 void draw()
 {
-  //loadPixels();
+  if(mode == 2)
+  {
+    loadPixels();
+  }
+  
   for (int i=0; i < SnowFlakeArrayLength; i++)
   {
     storm[i].erase();
@@ -47,6 +53,7 @@ void keyPressed()
   if (key == ' ')
   {
     background(0);
+    mode = (int)(Math.random()*2+1);
     for (int i=0; i < SnowFlakeArrayLength; i++)
     {
       storm[i].myX = (int)(Math.random()*(width-19)+10);
@@ -77,37 +84,43 @@ class SnowFlake
   {
     if(myY+7 < height)
     {
-      /*if(pixels[((myY+7)*width)+myX] != color(0,0,0))
+      if(mode == 2)
       {
-        isMoving=false;
-      }
-      else if(pixels[((myY+5)*width)+myX+5] != color(0,0,0))
+        if(pixels[((myY+7)*width)+myX] != color(0,0,0))
+        {
+          isMoving=false;
+        }
+        else if(pixels[((myY+5)*width)+myX+5] != color(0,0,0))
+        {
+          isMoving=false;
+        }
+        else if(pixels[((myY+5)*width)+myX-5] != color(0,0,0))
+        {
+          isMoving=false;
+        }
+        else 
+        {
+          isMoving = true;  
+        }
+      } 
+      if(mode == 1)
       {
-        isMoving=false;
-      }
-      else if(pixels[((myY+5)*width)+myX-5] != color(0,0,0))
-      {
-        isMoving=false;
-      }
-      else 
-      {
-        isMoving = true;  
-      }*/
-      if (get(myX,myY+7) != color(0,0,0))
-      {
-        isMoving = false;
-      }
-      else if (get(myX+5,myY+5) != color (0,0,0))
-      {
-        isMoving = false;
-      }
-      else if (get(myX-5,myY+5) != color(0,0,0))
-      {
-        isMoving = false;
-      }
-      else 
-      {
-        isMoving = true;
+        if (get(myX,myY+7) != color(0,0,0))
+        {
+          isMoving = false;
+        }
+        else if (get(myX+5,myY+5) != color (0,0,0))
+        {
+          isMoving = false;
+        }
+        else if (get(myX-5,myY+5) != color(0,0,0))
+        {
+          isMoving = false;
+        }
+        else 
+        {
+          isMoving = true;
+        }
       }
     }
   } 

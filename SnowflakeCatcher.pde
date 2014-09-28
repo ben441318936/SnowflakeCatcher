@@ -6,7 +6,7 @@ since the objects are in an array, every time we need to access
 or do anything with them, we need to loop through the array,
 using indexes
 */
-int SnowFlakeArrayLength = 500;
+int SnowFlakeArrayLength = 2000;
 int mode = (int)(Math.random()*2+1);
 
 void setup()

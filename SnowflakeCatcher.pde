@@ -6,8 +6,13 @@ since the objects are in an array, every time we need to access
 or do anything with them, we need to loop through the array,
 using indexes
 */
-int SnowFlakeArrayLength = 2000;
-int mode = (int)(Math.random()*2+1);
+int SnowFlakeArrayLength = 500;
+/*
+mode1 uses get() function;
+mode2 uses pixels[] array;
+default is mode1 which was introduced in class;
+*/
+int mode = 1;
 
 void setup()
 {
@@ -63,22 +68,27 @@ void mouseDragged()
 
 void keyPressed()
 {
-  /*
-  redraws the screen;
-  randomizes the mode;
-  */
+  //redraws the screen;
   if (key == ' ')
   {
     background(0);
-    mode = (int)(Math.random()*2+1);
     for (int i = 0; i < SnowFlakeArrayLength; i++)
     {
       storm[i].myX = (int)(Math.random()*(width-19)+10);
       storm[i].myY = (int)(Math.random()*(width-19)+10);
       storm[i].isMoving = true;
     }
-    //println(mode);
   }
+  //switching the mode
+  if (key == '1')
+  {
+    mode = 1;
+  }
+  if (key == '2')
+  {
+    mode = 2;
+  }
+  System.out.println("mode: "+mode);
 }
 
 class SnowFlake
@@ -108,8 +118,6 @@ class SnowFlake
     /*
     checking pixels below the snowflake for impact;
     the pixels checked must be on the screen and are not any point on the "erase" ellipse;
-    mode1 uses get() function;
-    mode2 uses pixels[] array;
     */
     if(myY+7 < height)
     {

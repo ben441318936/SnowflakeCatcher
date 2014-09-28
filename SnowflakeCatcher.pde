@@ -77,6 +77,7 @@ void keyPressed()
       storm[i].myY = (int)(Math.random()*(width-19)+10);
       storm[i].isMoving = true;
     }
+    //println(mode);
   }
 }
 

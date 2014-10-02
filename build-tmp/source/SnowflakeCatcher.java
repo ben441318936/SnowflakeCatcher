@@ -22,7 +22,7 @@ since the objects are in an array, every time we need to access
 or do anything with them, we need to loop through the array,
 using indexes
 */
-int SnowFlakeArrayLength = 500;
+int SnowFlakeArrayLength = 1000;
 /*
 mode1 uses get() function;
 mode2 uses pixels[] array;

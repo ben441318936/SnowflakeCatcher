@@ -88,9 +88,7 @@ void keyPressed()
   {
     mode = 2;
   }
-  System.out.println("mode: "+mode);
 }
-
 class SnowFlake
 {
   //member varables here

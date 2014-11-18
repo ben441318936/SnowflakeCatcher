@@ -35,7 +35,7 @@ public void setup()
   //basic settings;
   imageMode(RGB);
   frameRate(60);
-  size(500,500);
+  size(500,500,P2D);
   background(0,0,0);
   //initialize (put objects into) storm, the array of snowflakes
   storm = new SnowFlake [SnowFlakeArrayLength];
@@ -104,9 +104,7 @@ public void keyPressed()
   {
     mode = 2;
   }
-  System.out.println("mode: "+mode);
 }
-
 class SnowFlake
 {
   //member varables here
